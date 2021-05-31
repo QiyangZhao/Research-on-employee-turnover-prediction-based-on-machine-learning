@@ -10,3 +10,17 @@
 ## 项目要求
 (1) 通过可视化方法探索员工绩效评估、工作时长等因素与员工是否离职的相关性。<br>
 (2) 使用至少5类分类算法完成员工是否离职的预测，并对模型效果进行评估比较，<br>要求最好的的模型效果达到Precision、Recall、AUG>=0.8。
+
+## 代码说明
+
+### 数据可视化.py
+对数据集可视化分析，观察员工特征属性的分布特征，探究不同特征属性与离职的相关性。<br>
+### 数据预处理.py
+原始数据集：HR_comma_seq.csv<br>
+对原始数据集预处理，包括归一化处理和one-hot编码，按照7：3划分成训练集和测试集。<br>
+生成hr_train.csv和hr_test.csv用于KNN、SVM、Logistic Regression模型。<br>
+另对原始数据集不进行归一化处理，只进行one-hot编码，按照7：3划分成训练集和测试集。<br>
+生成hr_tree_train.csv和hr_tree_test.csv用于决策树和随机森林模型。
+### 分类模型.py
+训练分类模型并调参，包括KNN、SVM、Logistic Regression、决策树和随机森林5种模型。<br>
+使用训练好的模型预测测试集员工的离职倾向，得出混淆矩阵和accuracy、precision、recall、F1-score、AUC得分。
